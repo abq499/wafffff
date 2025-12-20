@@ -1,0 +1,51 @@
+{"ts": 1760980193, "method": "GET", "path": "/WebGoat", "query": "", "body": "", "model_score": 0.047, "model_info": "none", "response_status": 302, "action": "allowed"}
+{"ts": 1760980204, "method": "POST", "path": "/WebGoat/login", "query": "", "body": "username=' OR '1'='1'--&password=anything", "model_score": 0.648, "model_info": "sqli-regex", "response_status": 302, "action": "blocked-immediate-rule"}
+{"ts": 1760980214, "method": "POST", "path": "/WebGoat/somepage", "query": "", "body": "comment=<script>alert(1)</script>", "model_score": 0.761, "model_info": "xss-regex,kw:<script,kw:alert(", "response_status": 302, "action": "blocked-immediate-rule"}
+{"ts": 1761013264, "method": "GET", "path": "/WebGoat", "query": "", "body": "", "model_score": 0.026, "model_info": "none", "response_status": 302, "action": "allowed"}
+{"ts": 1761013264, "method": "GET", "path": "/WebGoat/", "query": "", "body": "", "model_score": 0.047, "model_info": "none", "response_status": 302, "action": "allowed"}
+{"ts": 1761013264, "method": "GET", "path": "/WebGoat/login", "query": "", "body": "", "model_score": 0.001, "model_info": "none", "response_status": 200, "action": "allowed"}
+{"ts": 1761013265, "method": "GET", "path": "/WebGoat/css/main.css", "query": "", "body": "", "model_score": 0.002, "model_info": "none", "response_status": 200, "action": "allowed"}
+{"ts": 1761013265, "method": "GET", "path": "/WebGoat/css/animate.css", "query": "", "body": "", "model_score": 0.038, "model_info": "none", "response_status": 200, "action": "allowed"}
+{"ts": 1761013265, "method": "GET", "path": "/WebGoat/css/font-awesome.min.css", "query": "", "body": "", "model_score": 0.042, "model_info": "none", "response_status": 200, "action": "allowed"}
+{"ts": 1761013265, "method": "GET", "path": "/WebGoat/plugins/bootstrap/css/bootstrap.min.css", "query": "", "body": "", "model_score": 0.002, "model_info": "none", "response_status": 200, "action": "allowed"}
+{"ts": 1761013265, "method": "GET", "path": "/WebGoat/css/img/logoBG.jpg", "query": "", "body": "", "model_score": 0.01, "model_info": "none", "response_status": 200, "action": "allowed"}
+{"ts": 1761013326, "method": "GET", "path": "/WebGoat", "query": "", "body": "", "model_score": 0.018, "model_info": "none", "response_status": 302, "action": "allowed"}
+{"ts": 1761013349, "method": "POST", "path": "/WebGoat/login", "query": "", "body": "username=demo&password=demo", "model_score": 0.011, "model_info": "none", "response_status": 302, "action": "allowed"}
+{"ts": 1761013384, "method": "POST", "path": "/WebGoat/login", "query": "", "body": "username=' OR '1'='1'--&password=anything", "model_score": 0.622, "model_info": "sqli-regex", "response_status": 302, "action": "blocked-immediate-rule"}
+{"ts": 1761013391, "method": "POST", "path": "/WebGoat/somepage", "query": "", "body": "comment=<script>alert(1)</script>", "model_score": 0.775, "model_info": "xss-regex,kw:<script,kw:alert(", "response_status": 302, "action": "blocked-immediate-rule"}
+{"ts": 1766199272, "method": "GET", "path": "/", "query": "", "body": "", "model_score": 0.033, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199277, "method": "GET", "path": "/", "query": "", "body": "", "model_score": 0.022, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199277, "method": "GET", "path": "/favicon.ico", "query": "", "body": "", "model_score": 0.002, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199294, "method": "GET", "path": "/home", "query": "", "body": "", "model_score": 0.033, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199304, "method": "GET", "path": "/products", "query": "id=10", "body": "", "model_score": 0.041, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199307, "method": "GET", "path": "/", "query": "", "body": "", "model_score": 0.01, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199314, "method": "GET", "path": "/search", "query": "q=book", "body": "", "model_score": 0.022, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199372, "method": "GET", "path": "/ping", "query": "ip=127.0.0.1%3Bls", "body": "", "model_score": 0.011, "model_info": "none", "response_status": 404, "action": "allowed"}
+{"ts": 1766199379, "method": "GET", "path": "/comment", "query": "msg=%3Cscript%3Ealert%281%29%3C%2Fscript%3E", "body": "", "model_score": 0.762, "model_info": "xss-regex,kw:<script,kw:alert(", "response_status": 404, "action": "blocked-immediate-rule"}
+{"ts": 1766199389, "method": "GET", "path": "/file", "query": "name=..%2F..%2Fetc%2Fpasswd", "body": "", "model_score": 1.0, "model_info": "lfi-regex,lfi-regex,kw:/etc/", "response_status": 404, "action": "blocked-immediate-rule"}
+{"ts": 1766210273, "method": "GET", "path": "/WebGoat", "query": "", "body": "", "model_score": 0.148, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766210273, "method": "GET", "path": "/WebGoat/", "query": "", "body": "", "model_score": 0.146, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766210274, "method": "GET", "path": "/WebGoat/login", "query": "", "body": "", "model_score": 0.207, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766210275, "method": "GET", "path": "/WebGoat/css/font-awesome.min.css", "query": "", "body": "", "model_score": 0.157, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766210275, "method": "GET", "path": "/WebGoat/css/main.css", "query": "", "body": "", "model_score": 0.128, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766210275, "method": "GET", "path": "/WebGoat/plugins/bootstrap/css/bootstrap.min.css", "query": "", "body": "", "model_score": 0.151, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766210275, "method": "GET", "path": "/WebGoat/css/animate.css", "query": "", "body": "", "model_score": 0.156, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766210275, "method": "GET", "path": "/WebGoat/css/img/logoBG.jpg", "query": "", "body": "", "model_score": 0.168, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766210275, "method": "GET", "path": "/WebGoat/css/img/favicon.ico", "query": "", "body": "", "model_score": 0.151, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766210553, "method": "POST", "path": "/WebGoat/login", "query": "", "body": "", "model_score": 0.201, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766210563, "method": "POST", "path": "/WebGoat/login", "query": "", "body": "username=' OR '1'='1'--&password=anything", "model_score": 0.776, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766210635, "method": "POST", "path": "/WebGoat/somepage", "query": "", "body": "comment=<script>alert(1)</script>", "model_score": 0.884, "model_info": "ml-model", "response_status": 302, "action": "blocked-threshold"}
+{"ts": 1766210655, "method": "POST", "path": "/WebGoat/login", "query": "", "body": "username=' OR '1'='1'--&password=anything", "model_score": 0.776, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766210662, "method": "GET", "path": "/file", "query": "name=..%2F..%2Fetc%2Fpasswd", "body": "", "model_score": 0.718, "model_info": "ml-model", "response_status": 404, "action": "allowed"}
+{"ts": 1766210814, "method": "GET", "path": "/file", "query": "name=..%2F..%2Fetc%2Fpasswd", "body": "", "model_score": 0.718, "model_info": "ml-model", "response_status": 404, "action": "allowed"}
+{"ts": 1766210845, "method": "GET", "path": "/search", "query": "q=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E", "body": "", "model_score": 0.524, "model_info": "ml-model", "response_status": 404, "action": "allowed"}
+{"ts": 1766210860, "method": "GET", "path": "/search", "query": "q=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E", "body": "", "model_score": 0.524, "model_info": "ml-model", "response_status": 404, "action": "allowed"}
+{"ts": 1766211486, "method": "GET", "path": "/WebGoat", "query": "", "body": "", "model_score": 0.148, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766211486, "method": "GET", "path": "/WebGoat/", "query": "", "body": "", "model_score": 0.146, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766211487, "method": "GET", "path": "/WebGoat/login", "query": "", "body": "", "model_score": 0.207, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766212206, "method": "GET", "path": "/WebGoat", "query": "", "body": "", "model_score": 0.148, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766212207, "method": "GET", "path": "/WebGoat/", "query": "", "body": "", "model_score": 0.146, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766212207, "method": "GET", "path": "/WebGoat/login", "query": "", "body": "", "model_score": 0.207, "model_info": "ml-model", "response_status": 200, "action": "allowed"}
+{"ts": 1766212218, "method": "POST", "path": "/WebGoat/login", "query": "", "body": "username=demo&password=demo", "model_score": 0.377, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766212218, "method": "GET", "path": "/WebGoat/login", "query": "error=", "body": "", "model_score": 0.249, "model_info": "ml-model", "response_status": 302, "action": "allowed"}
+{"ts": 1766212218, "method": "GET", "path": "/WebGoat/login", "query": "", "body": "", "model_score": 0.207, "model_info": "ml-model", "response_status": 200, "action": "allowed"}

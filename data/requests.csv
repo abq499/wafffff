@@ -1,0 +1,43 @@
+action,body,method,model_info,model_score,path,query,response_status,ts
+allowed,,GET,none,0.047,/WebGoat,,302,1760980193
+blocked-immediate-rule,username=' OR '1'='1'--&password=anything,POST,sqli-regex,0.648,/WebGoat/login,,302,1760980204
+blocked-immediate-rule,comment=<script>alert(1)</script>,POST,"xss-regex,kw:<script,kw:alert(",0.761,/WebGoat/somepage,,302,1760980214
+allowed,,GET,none,0.026,/WebGoat,,302,1761013264
+allowed,,GET,none,0.047,/WebGoat/,,302,1761013264
+allowed,,GET,none,0.001,/WebGoat/login,,200,1761013264
+allowed,,GET,none,0.002,/WebGoat/css/main.css,,200,1761013265
+allowed,,GET,none,0.038,/WebGoat/css/animate.css,,200,1761013265
+allowed,,GET,none,0.042,/WebGoat/css/font-awesome.min.css,,200,1761013265
+allowed,,GET,none,0.002,/WebGoat/plugins/bootstrap/css/bootstrap.min.css,,200,1761013265
+allowed,,GET,none,0.01,/WebGoat/css/img/logoBG.jpg,,200,1761013265
+allowed,,GET,none,0.018,/WebGoat,,302,1761013326
+allowed,username=demo&password=demo,POST,none,0.011,/WebGoat/login,,302,1761013349
+blocked-immediate-rule,username=' OR '1'='1'--&password=anything,POST,sqli-regex,0.622,/WebGoat/login,,302,1761013384
+blocked-immediate-rule,comment=<script>alert(1)</script>,POST,"xss-regex,kw:<script,kw:alert(",0.775,/WebGoat/somepage,,302,1761013391
+allowed,,GET,none,0.033,/,,404,1766199272
+allowed,,GET,none,0.022,/,,404,1766199277
+allowed,,GET,none,0.002,/favicon.ico,,404,1766199277
+allowed,,GET,none,0.033,/home,,404,1766199294
+allowed,,GET,none,0.041,/products,id=10,404,1766199304
+allowed,,GET,none,0.01,/,,404,1766199307
+allowed,,GET,none,0.022,/search,q=book,404,1766199314
+allowed,,GET,none,0.011,/ping,ip=127.0.0.1%3Bls,404,1766199372
+blocked-immediate-rule,,GET,"xss-regex,kw:<script,kw:alert(",0.762,/comment,msg=%3Cscript%3Ealert%281%29%3C%2Fscript%3E,404,1766199379
+blocked-immediate-rule,,GET,"lfi-regex,lfi-regex,kw:/etc/",1.0,/file,name=..%2F..%2Fetc%2Fpasswd,404,1766199389
+allowed,,GET,ml-model,0.148,/WebGoat,,302,1766210273
+allowed,,GET,ml-model,0.146,/WebGoat/,,302,1766210273
+allowed,,GET,ml-model,0.207,/WebGoat/login,,200,1766210274
+allowed,,GET,ml-model,0.157,/WebGoat/css/font-awesome.min.css,,200,1766210275
+allowed,,GET,ml-model,0.128,/WebGoat/css/main.css,,200,1766210275
+allowed,,GET,ml-model,0.151,/WebGoat/plugins/bootstrap/css/bootstrap.min.css,,200,1766210275
+allowed,,GET,ml-model,0.156,/WebGoat/css/animate.css,,200,1766210275
+allowed,,GET,ml-model,0.168,/WebGoat/css/img/logoBG.jpg,,200,1766210275
+allowed,,GET,ml-model,0.151,/WebGoat/css/img/favicon.ico,,200,1766210275
+allowed,,POST,ml-model,0.201,/WebGoat/login,,302,1766210553
+allowed,username=' OR '1'='1'--&password=anything,POST,ml-model,0.776,/WebGoat/login,,302,1766210563
+blocked-threshold,comment=<script>alert(1)</script>,POST,ml-model,0.884,/WebGoat/somepage,,302,1766210635
+allowed,username=' OR '1'='1'--&password=anything,POST,ml-model,0.776,/WebGoat/login,,302,1766210655
+allowed,,GET,ml-model,0.718,/file,name=..%2F..%2Fetc%2Fpasswd,404,1766210662
+allowed,,GET,ml-model,0.718,/file,name=..%2F..%2Fetc%2Fpasswd,404,1766210814
+allowed,,GET,ml-model,0.524,/search,q=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E,404,1766210845
+allowed,,GET,ml-model,0.524,/search,q=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E,404,1766210860

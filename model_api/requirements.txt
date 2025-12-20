@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pydantic
+#transformers==4.*/   # optional if using pretrained tokenizers later
+torch
+numpy
