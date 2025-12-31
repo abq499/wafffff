@@ -56,24 +56,32 @@ Hệ thống cho phép đi qua (HTTP 200/302).
 
 
 curl -X POST -d "username=admin&password=123" http://localhost:8010/WebGoat/login -v
+
 Kịch bản 2: Tấn công SQL Injection (Layer 2 Block)
+
 Hệ thống AI phát hiện và chặn (HTTP 403).
 
 
 
 curl -X POST -d "username=' OR '1'='1'--&password=123" http://localhost:8010/WebGoat/login -v
+
 Kịch bản 3: Tấn công XSS (Layer 2 Block)
+
 Hệ thống AI phát hiện mã Script và chặn (HTTP 403).
 
 
 
 curl -X POST -d "comment=<script>alert(1)</script>" http://localhost:8010/WebGoat/somepage -v
+
 Kịch bản 4: Tấn công DDoS (Layer 1 Block)
+
 Gửi liên tục 60 requests. Các request đầu đi qua, các request sau bị chặn do vượt ngưỡng 50 req/10s (HTTP 429).
 
 
 FOR /L %i IN (1,1,60) DO curl -s -o NUL -w "%{http_code} " http://localhost:8010/WebGoat/
-🧠 Huấn luyện lại Mô hình (Retraining Model)
+
+# 🧠 Huấn luyện lại Mô hình (Retraining Model)
+
 Nếu bạn muốn cập nhật dataset để mô hình thông minh hơn:
 
 Cập nhật dữ liệu: Thêm mẫu tấn công mới vào file data/labeled_requests.csv.
@@ -83,17 +91,20 @@ Chạy script train:
 
 
 python notebooks/train_simple.py
+
 Cập nhật vào Docker:
 
 
 
 -Copy model mới vào container
+
 docker cp notebooks/model.pt model_api:/app/model.pt
 
 -Khởi động lại service AI
+
 docker-compose restart model_api
 
-🛠️ Khắc phục sự cố (Troubleshooting)
+# 🛠️ Khắc phục sự cố (Troubleshooting)
 Lỗi "Port already in use": Tắt các ứng dụng đang chiếm dụng port 8010 hoặc 8501, hoặc sửa trong docker-compose.yml.
 
 Log Dashboard không chạy: Bấm nút Refresh Data Now hoặc nút DELETE ALL LOGS trên giao diện Dashboard để reset.
