@@ -17,23 +17,31 @@ class Req(BaseModel):
     body: str
     query: str
 
-class ConvClassifier(nn.Module):
-    def __init__(self, vocab_size, embed_dim=64):
+# SU DUNG KIEN TRUC LSTM (Layer 2) THEO BAI BAO
+# Paper section 4.5: Bidirectional LSTM
+class LSTMClassifier(nn.Module):
+    def __init__(self, vocab_size, embed_dim=64, hidden_dim=64):
         super().__init__()
         self.embed = nn.Embedding(vocab_size, embed_dim, padding_idx=0)
-        self.conv = nn.Conv1d(embed_dim, 128, kernel_size=5, padding=2)
-        self.pool = nn.AdaptiveMaxPool1d(1)
-        self.fc = nn.Linear(128, 1)
+        # Su dung LSTM 2 chieu (bidirectional=True)
+        self.lstm = nn.LSTM(embed_dim, hidden_dim, batch_first=True, bidirectional=True)
+        # Output cua Bi-LSTM la hidden_dim * 2
+        self.fc = nn.Linear(hidden_dim * 2, 1)
+        self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        e = self.embed(x).permute(0, 2, 1)
-        c = torch.relu(self.conv(e))
-        p = self.pool(c).squeeze(-1)
-        return torch.sigmoid(self.fc(p))
+        # x shape: (Batch, Sequence Length)
+        e = self.embed(x)
+        # LSTM tra ve (output, (hidden, cell))
+        lstm_out, _ = self.lstm(e)
+        # Lay gia tri trung binh cua tat ca cac time steps (Mean Pooling)
+        out = torch.mean(lstm_out, dim=1)
+        return self.sigmoid(self.fc(out))
 
+# Load model (Luu y: Can train lai model bang file train_simple.py truoc khi chay)
 checkpoint = torch.load(MODEL_PATH, map_location="cpu")
 vocab = checkpoint["vocab"]
-model = ConvClassifier(vocab_size=len(vocab) + 1)
+model = LSTMClassifier(vocab_size=len(vocab) + 1)
 model.load_state_dict(checkpoint["model"])
 model.eval()
 
@@ -44,8 +52,9 @@ def encode(text):
 
 @app.post("/score")
 def score(req: Req):
+    # Ket hop method, path, query, body thanh 1 chuoi de dua vao LSTM
     text = f"{req.method} {req.path} {req.query} {req.body}".lower()
     x = encode(text)
     with torch.no_grad():
         s = model(x).item()
-    return {"score": round(s, 3), "info": "ml-model"}
+    return {"score": round(s, 3), "info": "lstm-model"}

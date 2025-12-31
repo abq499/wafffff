@@ -26,6 +26,20 @@ services:
       - ./data:/data
     restart: always
 
+  #New
+  dashboard:
+    build: ./dashboard
+    container_name: waf_dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      - REQUEST_LOG_PATH=/data/requests.jsonl
+    volumes:
+      - ./dashboard:/app
+      - ./data:/data  
+    restart: always
+  # -----------------------------
+
   webgoat:
     image: webgoat/webgoat
     container_name: webgoat

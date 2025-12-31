@@ -1,43 +1,167 @@
 action,body,method,model_info,model_score,path,query,response_status,ts,label
-allowed,,GET,none,0.047,/WebGoat,,302,1760980193,normal
-blocked-immediate-rule,username=' OR '1'='1'--&password=anything,POST,sqli-regex,0.648,/WebGoat/login,,302,1760980204,attack
-blocked-immediate-rule,comment=<script>alert(1)</script>,POST,"xss-regex,kw:<script,kw:alert(",0.761,/WebGoat/somepage,,302,1760980214,attack
-allowed,,GET,none,0.026,/WebGoat,,302,1761013264,normal
-allowed,,GET,none,0.047,/WebGoat/,,302,1761013264,normal
-allowed,,GET,none,0.001,/WebGoat/login,,200,1761013264,normal
-allowed,,GET,none,0.002,/WebGoat/css/main.css,,200,1761013265,normal
-allowed,,GET,none,0.038,/WebGoat/css/animate.css,,200,1761013265,normal
-allowed,,GET,none,0.042,/WebGoat/css/font-awesome.min.css,,200,1761013265,normal
-allowed,,GET,none,0.002,/WebGoat/plugins/bootstrap/css/bootstrap.min.css,,200,1761013265,normal
-allowed,,GET,none,0.01,/WebGoat/css/img/logoBG.jpg,,200,1761013265,normal
-allowed,,GET,none,0.018,/WebGoat,,302,1761013326,normal
-allowed,username=demo&password=demo,POST,none,0.011,/WebGoat/login,,302,1761013349,normal
-blocked-immediate-rule,username=' OR '1'='1'--&password=anything,POST,sqli-regex,0.622,/WebGoat/login,,302,1761013384,attack
-blocked-immediate-rule,comment=<script>alert(1)</script>,POST,"xss-regex,kw:<script,kw:alert(",0.775,/WebGoat/somepage,,302,1761013391,attack
-allowed,,GET,none,0.033,/,,404,1766199272,normal
-allowed,,GET,none,0.022,/,,404,1766199277,normal
-allowed,,GET,none,0.002,/favicon.ico,,404,1766199277,normal
-allowed,,GET,none,0.033,/home,,404,1766199294,normal
-allowed,,GET,none,0.041,/products,id=10,404,1766199304,normal
-allowed,,GET,none,0.01,/,,404,1766199307,normal
-allowed,,GET,none,0.022,/search,q=book,404,1766199314,normal
-allowed,,GET,none,0.011,/ping,ip=127.0.0.1%3Bls,404,1766199372,normal
-blocked-immediate-rule,,GET,"xss-regex,kw:<script,kw:alert(",0.762,/comment,msg=%3Cscript%3Ealert%281%29%3C%2Fscript%3E,404,1766199379,attack
-blocked-immediate-rule,,GET,"lfi-regex,lfi-regex,kw:/etc/",1.0,/file,name=..%2F..%2Fetc%2Fpasswd,404,1766199389,attack
-allowed,,GET,ml-model,0.148,/WebGoat,,302,1766210273,normal
-allowed,,GET,ml-model,0.146,/WebGoat/,,302,1766210273,normal
-allowed,,GET,ml-model,0.207,/WebGoat/login,,200,1766210274,normal
-allowed,,GET,ml-model,0.157,/WebGoat/css/font-awesome.min.css,,200,1766210275,normal
-allowed,,GET,ml-model,0.128,/WebGoat/css/main.css,,200,1766210275,normal
-allowed,,GET,ml-model,0.151,/WebGoat/plugins/bootstrap/css/bootstrap.min.css,,200,1766210275,normal
-allowed,,GET,ml-model,0.156,/WebGoat/css/animate.css,,200,1766210275,normal
-allowed,,GET,ml-model,0.168,/WebGoat/css/img/logoBG.jpg,,200,1766210275,normal
-allowed,,GET,ml-model,0.151,/WebGoat/css/img/favicon.ico,,200,1766210275,normal
-allowed,,POST,ml-model,0.201,/WebGoat/login,,302,1766210553,normal
-allowed,username=' OR '1'='1'--&password=anything,POST,ml-model,0.776,/WebGoat/login,,302,1766210563,normal
-blocked-threshold,comment=<script>alert(1)</script>,POST,ml-model,0.884,/WebGoat/somepage,,302,1766210635,attack
-allowed,username=' OR '1'='1'--&password=anything,POST,ml-model,0.776,/WebGoat/login,,302,1766210655,normal
-allowed,,GET,ml-model,0.718,/file,name=..%2F..%2Fetc%2Fpasswd,404,1766210662,normal
-allowed,,GET,ml-model,0.718,/file,name=..%2F..%2Fetc%2Fpasswd,404,1766210814,normal
-allowed,,GET,ml-model,0.524,/search,q=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E,404,1766210845,normal
-allowed,,GET,ml-model,0.524,/search,q=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E,404,1766210860,normal
+allowed,,GET,lstm-model,0.169,/WebGoat,,302,1766323644,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323644,normal
+allowed,,GET,lstm-model,0.169,/WebGoat/login,,200,1766323644,normal
+allowed,,GET,lstm-model,0.169,/WebGoat/login,,200,1766323648,normal
+allowed,,GET,lstm-model,0.169,/WebGoat/login,,200,1766323648,normal
+allowed,username=' OR '1'='1'--&password=123,POST,lstm-model,0.2,/WebGoat/login,,302,1766323672,normal
+allowed,username=' OR '1'='1'--&password=123,POST,lstm-model,0.2,/WebGoat/login,,302,1766323705,normal
+allowed,username=' OR '1'='1'--&password=123,POST,lstm-model,0.2,/WebGoat/login,,302,1766323803,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323835,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323836,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323837,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323837,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323837,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323837,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323837,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323838,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323839,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323839,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323840,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323840,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323840,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323840,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323840,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323840,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323840,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323841,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323841,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323841,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323841,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323841,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323841,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323842,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323842,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323842,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323842,normal
+allowed,,GET,lstm-model,0.166,/WebGoat/,,302,1766323842,normal
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+blocked-ddos,,GET,DDoS-Layer-1,1.0,/WebGoat/,,429,1766323843,attack
+allowed,username=' OR '1'='1'--&password=123,POST,lstm-model,0.2,/WebGoat/login,,302,1766323938,normal
+allowed,comment=<script>alert(1)</script>,POST,lstm-model,0.226,/WebGoat/somepage,,302,1766323948,normal
+allowed,,POST,lstm-model,0.167,/WebGoat/login,,302,1766324039,normal
+allowed,,GET,lstm-model,0.187,/file,name=..%2F..%2Fetc%2Fpasswd,404,1766324054,normal
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=admin' --,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' UNION SELECT 1,2,3--,POST,manual,1.0,/WebGoat/login,,403,1760000003,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000004,attack
+blocked,comment=<script>alert('XSS')</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000005,attack
+blocked,,GET,manual,1.0,/WebGoat/login,username=' OR '1'='1'--,403,1760000006,attack
+blocked,,GET,manual,1.0,/search,q=<script>alert(1)</script>,403,1760000007,attack
+blocked,username=admin' AND 1=1--,POST,manual,1.0,/WebGoat/login,,403,1760000008,attack
+blocked,username=admin' OR '1'='1,POST,manual,1.0,/WebGoat/login,,403,1760000009,attack
+blocked,msg=<script>console.log(1)</script>,POST,manual,1.0,/contact,,403,1760000010,attack
+blocked,id=1' OR '1'='1,GET,manual,1.0,/product,,403,1760000011,attack
+blocked,user=<img src=x onerror=alert(1)>,POST,manual,1.0,/profile,,403,1760000012,attack
+blocked,,GET,manual,1.0,/WebGoat/login,user=' OR '1'='1'--,403,1760000013,attack
+blocked,xml=<script>alert(1)</script>,POST,manual,1.0,/api,,403,1760000014,attack
+blocked,json={"user": "' OR '1'='1"},POST,manual,1.0,/api/login,,403,1760000015,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000003,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000004,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000005,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000006,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000007,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000008,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000001,attack
+blocked,username=' OR '1'='1'--&password=123,POST,manual,1.0,/WebGoat/login,,403,1760000002,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+blocked,comment=<script>alert(1)</script>,POST,manual,1.0,/WebGoat/somepage,,403,1760000020,attack
+blocked,msg=<script>alert('XSS')</script>,POST,manual,1.0,/contact,,403,1760000021,attack
+blocked,search=<img src=x onerror=alert(1)>,GET,manual,1.0,/search,,403,1760000022,attack
+blocked,data=<svg/onload=alert(1)>,POST,manual,1.0,/api/submit,,403,1760000023,attack
+blocked,input=javascript:alert(1),POST,manual,1.0,/login,,403,1760000024,attack
+

