@@ -29,7 +29,7 @@ Dashboard (Streamlit): Giao diện giám sát tấn công theo thời gian thự
 1. Yêu cầu (Prerequisites)
 Docker Desktop (đã cài đặt và đang chạy).
 
-Git (tùy chọn).
+-Git (tùy chọn).
 
 2. Khởi chạy hệ thống
 Mở Terminal (CMD/PowerShell) tại thư mục gốc của dự án và chạy lệnh:
@@ -50,14 +50,14 @@ Sau khi chạy thành công, bạn có thể truy cập:
 🧪 Hướng dẫn Demo (Testing Scenarios)
 Sử dụng curl hoặc Postman để gửi các request kiểm thử.
 
-Kịch bản 1: Traffic Sạch (Normal Traffic)
+-Kịch bản 1: Traffic Sạch (Normal Traffic)
 Hệ thống cho phép đi qua (HTTP 200/302).
 
 
 
 curl -X POST -d "username=admin&password=123" http://localhost:8010/WebGoat/login -v
 
-Kịch bản 2: Tấn công SQL Injection (Layer 2 Block)
+-Kịch bản 2: Tấn công SQL Injection (Layer 2 Block)
 
 Hệ thống AI phát hiện và chặn (HTTP 403).
 
@@ -65,7 +65,7 @@ Hệ thống AI phát hiện và chặn (HTTP 403).
 
 curl -X POST -d "username=' OR '1'='1'--&password=123" http://localhost:8010/WebGoat/login -v
 
-Kịch bản 3: Tấn công XSS (Layer 2 Block)
+-Kịch bản 3: Tấn công XSS (Layer 2 Block)
 
 Hệ thống AI phát hiện mã Script và chặn (HTTP 403).
 
@@ -73,7 +73,7 @@ Hệ thống AI phát hiện mã Script và chặn (HTTP 403).
 
 curl -X POST -d "comment=<script>alert(1)</script>" http://localhost:8010/WebGoat/somepage -v
 
-Kịch bản 4: Tấn công DDoS (Layer 1 Block)
+-Kịch bản 4: Tấn công DDoS (Layer 1 Block)
 
 Gửi liên tục 60 requests. Các request đầu đi qua, các request sau bị chặn do vượt ngưỡng 50 req/10s (HTTP 429).
 
@@ -82,17 +82,17 @@ FOR /L %i IN (1,1,60) DO curl -s -o NUL -w "%{http_code} " http://localhost:8010
 
 # 🧠 Huấn luyện lại Mô hình (Retraining Model)
 
-Nếu bạn muốn cập nhật dataset để mô hình thông minh hơn:
+*Nếu bạn muốn cập nhật dataset để mô hình thông minh hơn:
 
-Cập nhật dữ liệu: Thêm mẫu tấn công mới vào file data/labeled_requests.csv.
+-Cập nhật dữ liệu: Thêm mẫu tấn công mới vào file data/labeled_requests.csv.
 
-Chạy script train:
+-Chạy script train:
 
 
 
 python notebooks/train_simple.py
 
-Cập nhật vào Docker:
+-Cập nhật vào Docker:
 
 
 
@@ -107,7 +107,6 @@ docker-compose restart model_api
 # 🛠️ Khắc phục sự cố (Troubleshooting)
 Lỗi "Port already in use": Tắt các ứng dụng đang chiếm dụng port 8010 hoặc 8501, hoặc sửa trong docker-compose.yml.
 
-Log Dashboard không chạy: Bấm nút Refresh Data Now hoặc nút DELETE ALL LOGS trên giao diện Dashboard để reset.
 
 Model không chặn được tấn công: Hãy thực hiện bước "Huấn luyện lại Mô hình" và đảm bảo đã copy file model.pt mới vào container.
 
