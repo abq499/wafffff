@@ -1,4 +1,4 @@
-🛡️ Layered WAF with Deep Learning (Bi-LSTM)
+# 🛡️ Layered WAF with Deep Learning (Bi-LSTM)
 Đồ án môn học: Bảo mật Web và Ứng dụng
 
 Giảng viên hướng dẫn: Thầy Ngô Khánh Khoa
